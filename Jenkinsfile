@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("devtraining/test")
+       app = docker.build("leodevops22")
     }
 
     stage('Test image') {
@@ -27,8 +27,8 @@ node {
         }
     }
     
-    stage('Trigger ManifestUpdate') {
-                echo "triggering updatemanifestjob"
-                build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
-        }
-}
+//     stage('Trigger ManifestUpdate') {
+//                 echo "triggering updatemanifestjob"
+//                 build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+//         }
+// }
